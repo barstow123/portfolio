@@ -1,0 +1,153 @@
+.contact-form input, textarea, button{
+	color: black;
+}
+
+.contact-form {
+	margin-left: 40px;
+	margin-right: auto;
+	width: 700px;
+	height: 280px;
+    margin-top: 20px;
+    background-color: #333;
+    padding-left: 80px;
+    padding-top: 30px;
+    border-radius: 20px;
+}
+
+
+
+.contact-form label {
+	display: inline;
+    position: absolute;
+    margin-top: 0px;
+    font-size: 2.2em;
+    margin-top: -20px;
+}
+
+.contact-form input {
+	width: 200px;
+    height: 20px;
+    margin-top: 180px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #777;
+    color: #DDD;
+    font-size: 1.2em;
+    margin-left: 20px;
+    width: 400px;
+    margin-bottom: 30px;
+}
+
+.contact-form div {
+	width: 100%;
+}
+
+.form-submit {
+	width: 200px;
+    margin-left: 10px;
+}
+
+.disable-btn {
+
+}
+
+.email-catcher, .name-catcher {
+	position: absolute;
+    display: inline;
+    margin-top: 177.5px;
+    margin-left: 20px;
+    font-size: 1.2em;
+    color: #777;
+}
+
+.user-container, .email-container {
+	background-color: #888;
+    border-radius: 15px;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    position: absolute;
+    margin-top: 177px;
+    margin-left: -15px;
+}
+
+.user-active, .email-active {
+	opacity: 0;
+}
+
+.user, .email {
+	margin-left: 2.5px;
+	margin-top: 2.5px;
+	position: absolute;
+}
+
+.name-label, .message-label {
+	opacity: 0;
+}
+
+.message-input {
+	background-color: #555;
+	border-radius: 15px;
+    border: none;
+    margin: 25px 0px 0px;
+    width: 5px;
+    height: 5px;
+    border-bottom: 1px solid #555;
+    margin-top: 50px;
+    font-family: 'Roboto Mono', monospace;
+    padding: 7px;
+    font-size: 1em;
+    resize: none;
+    overflow-y: auto;
+}
+
+.form-input-label-container {
+	height: 220px;
+    width: 500px;
+}
+
+.next-btn {
+	color: black;
+    font-family: 'K2D', sans-serif;
+}
+
+.mobile-next-btn {
+	display: none;
+}
+
+.submit-btn {
+	color: black;
+    font-family: 'K2D', sans-serif;
+}
+
+.disabled-btn {
+	background-color: #555;
+    color: #777;
+}
+
+.social {
+	bottom: 150px;
+	position: absolute;
+}
+
+.arrow {
+	position: absolute;
+    bottom: 0;
+    width: 300px;
+}
+
+.code-words {
+	position: absolute;
+    bottom: 0px;
+    width: 400px;
+    left: calc(100% - 450px);
+    display: none;
+}
+
+.interactive-words {
+    font-size: .7em;
+    color: #DDD;
+    opacity: 0;
+    padding-top: 5px;
+    font-family: 'Roboto Mono', monospace;
+}

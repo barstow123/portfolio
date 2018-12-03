@@ -1,0 +1,11 @@
+#main-content, #sidebar, #mobile-sidebar, .home-note {
+	display: none;
+}
+
+.flip-device {
+	display: block;
+	width: 250px;
+	position: fixed;
+	left: 35vw;
+	top: 15vh;
+}

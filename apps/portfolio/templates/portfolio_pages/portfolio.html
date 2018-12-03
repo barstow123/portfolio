@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	{% load static %}
+	<meta charset='UTF-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/popmotion/dist/popmotion.global.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+	<script defer src='{% static "js/mobile.js" %}'></script>
+	<script defer src='{% static "js/formAnimations.js" %}'></script>
+	<script defer src='{% static "js/main.js" %}'></script>
+	<script defer src="http://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
+	<link rel="stylesheet" type='text/css' href='{% static "pushy-buttons-master/pushy-buttons-master/css/pushy-buttons.min.css" %}'>
+	<link rel="stylesheet" type="text/css" href='{% static "mainStyles.css" %}'>
+	<link rel="stylesheet" type='text/css' href='{% static "formStyles.css" %}'>
+	<link rel="stylesheet" media="screen and (max-width: 652px)" href="{% static 'smallscreen.css' %}">
+	<link rel="stylesheet" media="screen and (min-width: 652px) and (max-width: 800px)" href='{% static "flipscreen.css" %}'>
+	<link href="https://fonts.googleapis.com/css?family=K2D" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+	<title>ABarstow</title>
+</head>
+<body>
+	<div id='wrapper'>
+		<img src='{% static "images/flip-device.png" %}' alt='pleast flip screen' class='flip-device'>
+
+		<div id='mobile-header'>
+
+		</div>
+
+		<div id='mobile-sidebar' class='unslid'>
+			<div class='mobile-slide-box' data-window-id='contact'><p>Contact Me</p></div>
+			<div class='mobile-slide-box' data-window-id='calendar'><p>Calendar</p></div>
+			<div class='mobile-slide-box' data-window-id='bio'><p>Bio</p></div>
+			<div class='mobile-slide-box' data-window-id='experience'><p>Experience</p></div>
+		</div>
+		<img src='{% static "images/treble-clef.png" %}' alt='mobile note' class='mobile-home-note' data-window-id='home-page'>
+		<img src='{% static "images/treble-clef.png" %}' alt='musical note' class='home-note' data-window-id='home-page'>
+		<div class='bars'>
+			<div class='bar'></div>
+			<div class='bar'></div>
+			<div class='bar'></div>
+		</div><!--
+	 --><div id='sidebar'>
+
+			<div class='sidebar-btn' data-window-id='contact'>
+				<p>Contact</p>
+			</div>
+
+			<div class='sidebar-btn' data-window-id='calendar'>
+				<p>Calendar</p>
+			</div>
+
+			<div class='sidebar-btn' data-window-id='bio'>
+				<p>Bio</p>
+			</div>
+
+			<div class='sidebar-btn' data-window-id='experience'>
+				<p>Experience</p>
+			</div>
+
+			<div class='icon-container'>
+				<a href="https://www.youtube.com/fatbubble123"><img src='{% static "images/youtube-small.png" %}' alt='youtube' data-alt-src='{% static "images/youtube-small-hovered.png" %}' class='youtube icon'></a>
+				<a href='https://www.facebook.com/andrew.barstow'><img src='{% static "images/facebook.png" %}' alt='facebook' data-alt-src='{% static "images/facebook-hovered.png" %}' class='fb icon'></a>
+				<a href='https://www.linkedin.com/in/andrew-barstow-676b0015b/'><img src='{% static "images/linkedin.png" %}' alt='linkedin' data-alt-src='{% static "images/linkedin-hovered.png" %}' class='linkedin icon'></a>
+				<a href='https://github.com/barstow123?tab=repositories'><img src='{% static "images/github.png" %}' alt='github' data-alt-src='{% static "images/github-hovered.png" %}' class='github icon'></a>
+			</div>
+		</div>
+
+		<div id='main-content'>
+
+			<div id='home-page' class='home {{portfolio}}'>
+				<h1 class='main-header'>Musician, Educator, Full Stack Developer</h1>
+				<span class='open-script'></span>
+				<img src='{% static "images/theoretical-artwork, transparent.png" %}' alt='great-art' class='artwork'>
+				<span class='close-script'></span>
+			</div>
+
+			<div id='bio' class='window slideable-up {{bio}}'>
+				<h1>This is my Bio</h1>
+				<div class='test'>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+			</div>
+
+			<div id='calendar' class='window slideable {{calendar}}'>
+				<h1>This is my Calendar</h1>
+				<iframe src="https://calendar.google.com/calendar/embed?showDate=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23000000&amp;src=abarstowtx%40gmail.com&amp;color=%231B887A&amp;ctz=America%2FChicago" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
+			</div>
+
+			<div id='contact' class='window slideable {{contact}}'>
+				<div class='contact-form'>
+					<span class='name-catcher'></span>
+					<span class='email-catcher'></span>
+					<span class='user-container'>
+						<img src='{% static "images/user.png" %}' alt='user' class='user user-waiting'>
+						<img src='{% static "images/user-active-small.png" %}' alt='user' class='user user-active'>
+						<span class='mobile user-fat-fingers fat-fingers'></span>
+					</span>
+					<span class='email-container'>
+						<img src='{% static "images/email.png" %}' alt='email' class='email email-waiting'>
+						<img src='{% static "images/email-active.png" %}' alt='email-active' class='email email-active'>
+						<span class='mobile email-fat-fingers fat-fingers'></span>
+					</span>
+
+					<form action = "{% url 'send_email' %}" method='post' class='con-form'>
+						<div class='form-input-label-container'>
+						{% csrf_token %}
+						<div class='show return-email unfilled'>
+							<label for='return-address' class='email-label'>please enter a return email address...</label>
+							<label for='message' class='message-label'>now, what did you want to talk about?</label>
+							<label for='name' class='name-label'>please enter your name...</label>
+							<input type='email' id='return-address' name='return-address' value='' class='email-input'>
+						</div>
+						<div class='hide name unfilled'>
+							<input type='text' id='name' name='name' value='' class='name-input'>
+						</div>
+						<div class='hide message unfilled'>
+							<textarea id='message' name='message' class='message-input'></textarea>
+						</div>
+						</div>
+						<button type='button' class='btn btn--md btn--grey next-btn'>Next</button>
+						<button type='button' class='btn btn--md btn--grey mobile-next-btn'>Next</button>
+						<button class='btn btn--md btn--red submit-btn form-submit disabled-btn' type='submit' disabled>Send!</button>
+					</form>
+				</div>
+				<div class='interactive-words hide'>
+					Click the icon to edit!
+				</div>
+				<img src='{% static "images/code_words.png" %}' alt='code words' class='desktop code-words'>
+				<h3 class='social'>Or, check me out on social media!</h3>
+				<div class='mobile-icon-container mobile'>
+					<a href="https://www.youtube.com/fatbubble123"><img src='{% static "images/youtube-small.png" %}' alt='youtube' data-alt-src='{% static "images/youtube-small-hovered.png" %}' class='youtube icon'></a>
+					<a href='https://www.facebook.com/andrew.barstow'><img src='{% static "images/facebook.png" %}' alt='facebook' data-alt-src='{% static "images/facebook-hovered.png" %}' class='fb icon'></a>
+					<a href='https://www.linkedin.com/in/andrew-barstow-676b0015b/'><img src='{% static "images/linkedin.png" %}' alt='linkedin' data-alt-src='{% static "images/linkedin-hovered.png" %}' class='linkedin icon'></a>
+					<a href='https://github.com/barstow123?tab=repositories'><img src='{% static "images/github.png" %}' alt='github' data-alt-src='{% static "images/github-hovered.png" %}' class='github icon'></a>
+				</div>
+
+				<img src='{% static "images/dumb-arrow.png" %}' alt='dumb-arrow' class='arrow desktop'>
+			</div>
+
+			<div id='experience' class='window slideable {{projects}}'>
+				<h1>Here is my Experience!</h1>
+				<div class='project'>
+					<p>I taught <a href='https://www.tamesmusic.com/about-us.html'>this guy</a> everything he knows about guitar from the ground up...before he was cool.</p>
+				</div>
+				<div class='project'>
+					<p>So many <a href='https://www.youtube.com/watch?v=JHZOAsQvsWw'>video shoots</a> with Dakota Jiminez</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

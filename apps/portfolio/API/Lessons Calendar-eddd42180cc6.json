@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "lessons-calendar-220219",
+  "private_key_id": "eddd42180cc6bbb06f1a4ea90e15a3bfc78c3554",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDVVv8RiH+oYM8l\nRamc6uMAE6f4i0RHtt57Z6jh5FU2/vE+hXbAM4QKuAqO3ZknqSDhpE5rQ7QklNsj\n8scoP8xatm28aoZsxnVtL2P7ra9CaF6X/C+X4svEfSnZJth+txd1u3AdCvgQkHWT\no6FWKY8EiQIwHbRoNn7BYH15CKr/rLHqlVOg0i55mPCHeb3SCdF0MaTcvdtOYFE9\nU1jG1pa8yWD2jKYMOPwDXJNCXPq3ua2srwXfJmHV1seKu1N5W0QjEtJeDSCKEb+C\n/HwXKBjF+HFZ3hJiZ9rDDnZ2bl6PYH1LK/3li8GoP9qgn1ozw652aRL1hKOYk+fb\nFF0jpKHpAgMBAAECggEACM4zbvTUWA3O3vn2Gzzyq6EkELUm11Lr8eoAZXp4LfHt\n4Se/FAXMUGjyPp1U4fcwHUAb4H+F4vCl7uDpaXbgp2naM6mt7LVwSVZoaQ3tKu+F\n3/4PtNQuluiXnpfk3a4O8NQQt5IpVP2xbKuXUCgc+BHznirLtHVzW+Xwp9s8u5rA\n2+c5lljAoYVVHenzlRa7U39usybi6PO/WxL+J2Gd9BtKReeX2+z9IArnJRRg42zQ\n6u1zulcFeWcECtZ0BC4L+yhZRxetEtI8IVUNHrAuWEsgLvDWPPE4cccycGyxE/rR\nod/dFQH9QpV3joCFkrDJW/G4WdBvlvO1zT8vy1nskQKBgQDxXV1++c49XonSE6eZ\nmfYx5SCEDgMtgc+tvUwJFnuFrhpJxHw27TfWJMZX17iqSnXgZpBDV8fFbEHH8IAB\n7q6yL7J2oOZ3e5j35s51ryYzJmSNkjvl9lxQLCSRoeIuSZU+HNeGjgNeYXKeIsKd\nCuekvxjz6jYy6ZzWp96RJqFfTQKBgQDiRpvps/LoqCuLjGuxy8d+ac1AvYtCNY18\nhoaUdNlg9ZTW6rf367loBQICQYTNXp+qF5388OqZuPAwWw9rabvKtw9OQh+8aRt4\nP5rpkNz8Ag2NFWzf4SpbdYoxVbfdTgmObF3W8KcezETxKVd6s9nbRgWcrMgbwUv7\nb+AMq753DQKBgQC0ZQm6G06vw3bSkmoTfWTqicuxpx9s5baorfCkYi9UDHoNZFNK\nYiX3YWj0woB8lkZfv4hXLMZcobrQisnBp/jdqJSD4WIfLzt3HQR2JMAyPqGsxf0K\ntQTtzvBOAGYiHlDzKW9UW9PcuIyH8IbwBPR4x3MI6qYzizLzpGfOqMa3iQKBgGxj\niFHlagk6bUl2ZSwQwinywmgto2R+xJyO0C6S3oIMgVSFsMQofXKvW2v7OIMrvW27\nzGkaejZSmXOAWx2H03XiRImnMQ6OhqMOTMVvJ/vre9RGHBYOBL00y5KgTefLdtZr\nYHQSaOtey/N9azMSrdvUaeHH/j8VU7FIwNkw95aNAoGADzHSzwbSia8NlTO6lDFn\nV2fP9qA6sMfVyEX4G8F84Pwgl6j4QJdjyipgilIOBOyVCLq5oIETJQaqtKqdgeqR\nSbn5XyWATlLieNU+EnQpq/vHD1IDX4l5NTdU2J/rAMSkxFnMI2HvrEhkXX68Hcmn\nQb6/sH582Hdtm9HRtm8y2kc=\n-----END PRIVATE KEY-----\n",
+  "client_email": "lessons-calendar@lessons-calendar-220219.iam.gserviceaccount.com",
+  "client_id": "116308097390808802772",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/lessons-calendar%40lessons-calendar-220219.iam.gserviceaccount.com"
+}

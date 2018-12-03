@@ -1,0 +1,197 @@
+.mobile {
+	display: inline-block;
+}
+
+.desktop {
+	display: none;
+}
+
+#wrapper {
+	overflow-y: hidden;
+	display: block;
+}
+
+.window {
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	width: calc(100% - 40px);
+	height: calc(100% - 70px);
+	/* overflow-y: scroll; */
+}
+
+#mobile-header {
+	width: 100%;
+	height: 300px;
+	margin-top: -300px;
+	background-color: #222;
+	position: fixed;
+	z-index: 2;
+}
+
+#mobile-sidebar {
+	z-index: 3;
+}
+
+#sidebar {
+	display: none;
+}
+
+#main-content {
+	margin-top: 50px;
+	margin-left: 0px;
+	width: 100%;
+	height: calc(100% - 50px);
+	z-index: 1;
+	position: relative;
+	left: 0px;
+}
+
+#main-content h1 {
+	margin-left: 20px;
+	margin-top: 20px;
+	margin-right: 20px;
+}
+
+.contact-form {
+	margin-top: 20px;
+	margin-left: 0px;
+	margin-right: 0px;
+	width: 100%;
+	height: 350px;
+	padding-right: 20px;
+	padding-top: 0px;
+	padding-left: 0px;
+	background-color: transparent;
+}
+
+.contact-form label {
+	font-size: 1.6em;
+	margin-top: -20px;
+
+}
+
+.fat-fingers {
+	width: 50px;
+	height: 50px;
+	background-color: transparent;
+	position: fixed;
+	margin-left: -12.5px;
+    margin-top: -12.5px;
+}
+
+.next-btn {
+	display: none;
+}
+
+.mobile-next-btn {
+	margin-left: auto;
+	color: black;
+    font-family: 'K2D', sans-serif;
+    display: block;
+    width: 140px;
+    margin-bottom: 5px;
+}
+
+.submit-btn {
+	margin-left: 0px;
+	width: 100%;
+}
+
+.interactive-words {
+	pointer-events: none;
+	margin-top: -150px;
+    padding-bottom: 150px;
+}
+
+.social {
+	position: relative;
+	margin-top: 200px;
+}
+
+.mobile-icon-container {
+	margin-top: -130px;
+	height: 120px;
+	width: 100%;
+}
+
+.icon {
+	vertical-align: top;
+	margin-left: 10%;
+}
+
+
+.artwork {
+	left: 0px;
+	top: 250px;
+}
+
+.open-script {
+	left: 20px;
+	top: 200px;
+}
+
+.close-script {
+	left: 20px;
+	top: 580px;
+}
+
+.bars {
+	position: fixed;
+	width: 70px;
+	height: 50px;
+	z-index: 3;
+	display: block;
+	right: 0px;
+}
+
+.bar {
+	width: 45px;
+	height: 7px;
+	background-color: #777;
+	margin-top: 5px;
+	display: block;
+	border-radius: 5px;
+	z-index: 4;
+	margin-left: 70px;
+}
+
+.bar:first-child {
+	margin-top: 10px;
+}
+
+.home-note {
+	display: none;
+}
+
+.mobile-home-note {
+	display: inline-block;
+	position: fixed;
+	width: 50px;
+	top: 0px;
+	left: 5px;
+	z-index: 3;
+	opacity: 0.0;
+}
+
+.mobile-slide-box {
+	background-color: transparent;
+	height: 40px;
+	width: 40vw;
+	margin-left: 100vw;
+	z-index: 3;
+	display: block;
+}
+
+.mobile-slide-box p {
+	margin-left: 10px;
+	z-index: 3;
+}
+
+.unslid {
+	pointer-events: none;
+}
+
+.artwork {
+	margin-left: -50px;
+}
