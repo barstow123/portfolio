@@ -5,17 +5,20 @@ function setMobileHandlers() {
 	$('.mobile-slide-box').click(function() {
 		let name = $(this).attr('data-window-id');
 		animateWindow(name)
+		window.history.pushState({}, '', `/${name}`);
 	})
 
 	$('.mobile-home-note').click(function() {
 		let name = $(this).attr('data-window-id');
 		animateWindow(name);
+		window.history.pushState({}, '', '/');
 	})
 
 	$('.bars').click(function() {
 
 		function toggleSlides() {
 
+			const activeWindowStyler = popmotion.styler(document.querySelector('.able'))
 			const mainContentStyler = popmotion.styler(document.getElementById('main-content'));
 			const headerStyler = popmotion.styler(document.getElementById('mobile-header'));
 			const mobileSlides = document.getElementById('mobile-sidebar')
@@ -51,8 +54,19 @@ function setMobileHandlers() {
 				}).start(headerStyler.set);
 
 				popmotion.tween({
-					from: 0,
-					to: {y: 150},
+					from: { height: document.body.clientHeight-50 + 'px' },
+					to: { height: document.body.clientHeight-200 +'px' },
+					ease: popmotion.easing.easeIn,
+					duration: 300,
+				}).start(activeWindowStyler.set);
+
+				popmotion.tween({
+					from: {
+						y: 0, height: document.body.clientHeight-50 +'px'
+						},
+					to: {
+						y: 150, height: document.body.clientHeight-200 +'px'
+					},
 					ease: popmotion.easing.easeIn,
 					duration: 300,
 				}).start(mainContentStyler.set);
@@ -109,20 +123,27 @@ function setMobileHandlers() {
 					}).start(mobileStylers[i].set), 600)
 				}
 				
-
 				popmotion.tween({
 					from: {y: 200},
 					to: {y: 50},
 					ease: popmotion.easing.easeIn,
-					duration: 350,
+					duration: 300,
 				}).start(headerStyler.set);
 
 				popmotion.tween({
-					from: {y: 150},
-					to: {y: 0},
+					from: { height: document.body.clientHeight-200 + 'px' },
+					to: { height: document.body.clientHeight-50 +'px' },
+					ease: popmotion.easing.easeIn,
+					duration: 300,
+				}).start(activeWindowStyler.set);
+
+				popmotion.tween({
+					from: {y: 150, height: document.body.clientHeight-200 +'px'},
+					to: {y: 0, height: document.body.clientHeight-50 +'px'},
 					ease: popmotion.easing.easeIn,
 					duration: 300,
 				}).start(mainContentStyler.set);
+				
 
 				popmotion.tween({
 					from: {
@@ -138,10 +159,8 @@ function setMobileHandlers() {
 					ease: popmotion.easing.easeInOut,
 					duration: 400,
 				}).start(mobileHomeNoteStyler.set);
-
 			}
 		}
-
 		toggleSlides();
 	});
 }

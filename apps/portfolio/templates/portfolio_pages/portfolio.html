@@ -7,15 +7,17 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="https://unpkg.com/popmotion/dist/popmotion.global.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+	<script defer src='{% static "js/projects.js" %}'></script>
 	<script defer src='{% static "js/mobile.js" %}'></script>
-	<script defer src='{% static "js/formAnimations.js" %}'></script>
+	<script defer src='{% static "js/formScripts.js" %}'></script>
 	<script defer src='{% static "js/main.js" %}'></script>
 	<script defer src="http://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
 	<link rel="stylesheet" type='text/css' href='{% static "pushy-buttons-master/pushy-buttons-master/css/pushy-buttons.min.css" %}'>
-	<link rel="stylesheet" type="text/css" href='{% static "mainStyles.css" %}'>
-	<link rel="stylesheet" type='text/css' href='{% static "formStyles.css" %}'>
-	<link rel="stylesheet" media="screen and (max-width: 652px)" href="{% static 'smallscreen.css' %}">
-	<link rel="stylesheet" media="screen and (min-width: 652px) and (max-width: 800px)" href='{% static "flipscreen.css" %}'>
+	<link rel="stylesheet" type="text/css" href='{% static "css/mainStyles.css" %}'>
+	<link rel="stylesheet" type='text/css' href='{% static "css/formStyles.css" %}'>
+	<link rel="stylesheet" type="text/css" href='{% static "css/projects.css" %}'>
+	<link rel="stylesheet" media="screen and (max-width: 652px)" href="{% static 'css/smallscreen.css' %}">
+	<link rel="stylesheet" media="screen and (min-width: 652px) and (max-width: 800px)" href='{% static "css/flipscreen.css" %}'>
 	<link href="https://fonts.googleapis.com/css?family=K2D" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -27,13 +29,14 @@
 
 		<div id='mobile-header'>
 
+
 		</div>
 
 		<div id='mobile-sidebar' class='unslid'>
 			<div class='mobile-slide-box' data-window-id='contact'><p>Contact Me</p></div>
 			<div class='mobile-slide-box' data-window-id='calendar'><p>Calendar</p></div>
 			<div class='mobile-slide-box' data-window-id='bio'><p>Bio</p></div>
-			<div class='mobile-slide-box' data-window-id='experience'><p>Experience</p></div>
+			<div class='mobile-slide-box' data-window-id='projects'><p>projects</p></div>
 		</div>
 		<img src='{% static "images/treble-clef.png" %}' alt='mobile note' class='mobile-home-note' data-window-id='home-page'>
 		<img src='{% static "images/treble-clef.png" %}' alt='musical note' class='home-note' data-window-id='home-page'>
@@ -56,8 +59,8 @@
 				<p>Bio</p>
 			</div>
 
-			<div class='sidebar-btn' data-window-id='experience'>
-				<p>Experience</p>
+			<div class='sidebar-btn' data-window-id='projects'>
+				<p>projects</p>
 			</div>
 
 			<div class='icon-container'>
@@ -68,7 +71,7 @@
 			</div>
 		</div>
 
-		<div id='main-content'>
+		<div id='main-content' class='unloaded'>
 
 			<div id='home-page' class='home {{portfolio}}'>
 				<h1 class='main-header'>Musician, Educator, Full Stack Developer</h1>
@@ -134,6 +137,7 @@
 					<form action = "{% url 'send_email' %}" method='post' class='con-form'>
 						<div class='form-input-label-container'>
 						{% csrf_token %}
+						<label for='onsubmit' class='thank-you-label'>Thank you! :)</label>
 						<div class='show return-email unfilled'>
 							<label for='return-address' class='email-label'>please enter a return email address...</label>
 							<label for='message' class='message-label'>now, what did you want to talk about?</label>
@@ -149,31 +153,100 @@
 						</div>
 						<button type='button' class='btn btn--md btn--grey next-btn'>Next</button>
 						<button type='button' class='btn btn--md btn--grey mobile-next-btn'>Next</button>
-						<button class='btn btn--md btn--red submit-btn form-submit disabled-btn' type='submit' disabled>Send!</button>
+						<button class='btn btn--md btn--red submit-btn form-submit disabled-btn submitter' type='submit'>Send!</button>
+						<div class='or-email-me-mobile mobile'>
+							<p>my email: abarstowtx@gmail.com</p>
+						</div>
 					</form>
 				</div>
 				<div class='interactive-words hide'>
 					Click the icon to edit!
 				</div>
-				<img src='{% static "images/code_words.png" %}' alt='code words' class='desktop code-words'>
-				<h3 class='social'>Or, check me out on social media!</h3>
-				<div class='mobile-icon-container mobile'>
-					<a href="https://www.youtube.com/fatbubble123"><img src='{% static "images/youtube-small.png" %}' alt='youtube' data-alt-src='{% static "images/youtube-small-hovered.png" %}' class='youtube icon'></a>
-					<a href='https://www.facebook.com/andrew.barstow'><img src='{% static "images/facebook.png" %}' alt='facebook' data-alt-src='{% static "images/facebook-hovered.png" %}' class='fb icon'></a>
-					<a href='https://www.linkedin.com/in/andrew-barstow-676b0015b/'><img src='{% static "images/linkedin.png" %}' alt='linkedin' data-alt-src='{% static "images/linkedin-hovered.png" %}' class='linkedin icon'></a>
-					<a href='https://github.com/barstow123?tab=repositories'><img src='{% static "images/github.png" %}' alt='github' data-alt-src='{% static "images/github-hovered.png" %}' class='github icon'></a>
+				<div class='or-email-me'>
+					<p>Or, email me at abarstowtx@gmail.com. I'm always listening!</p>
 				</div>
-
+				<img src='{% static "images/code_words.png" %}' alt='code words' class='desktop code-words'>
+				<div class='desktop-social'>
+					Or, check me out on social media!
+				</div>
+				<div class='mobile-footer-box mobile'>
+					<h3 class='social'>Or, check me out on social media!</h3>
+					<div class='mobile-icon-container mobile'>
+						<a href="https://www.youtube.com/fatbubble123"><img src='{% static "images/youtube-small.png" %}' alt='youtube' data-alt-src='{% static "images/youtube-small-hovered.png" %}' class='youtube icon'></a>
+						<a href='https://www.facebook.com/andrew.barstow'><img src='{% static "images/facebook.png" %}' alt='facebook' data-alt-src='{% static "images/facebook-hovered.png" %}' class='fb icon'></a>
+						<a href='https://www.linkedin.com/in/andrew-barstow-676b0015b/'><img src='{% static "images/linkedin.png" %}' alt='linkedin' data-alt-src='{% static "images/linkedin-hovered.png" %}' class='linkedin icon'></a>
+						<a href='https://github.com/barstow123?tab=repositories'><img src='{% static "images/github.png" %}' alt='github' data-alt-src='{% static "images/github-hovered.png" %}' class='github icon'></a>
+					</div>
+				</div>
 				<img src='{% static "images/dumb-arrow.png" %}' alt='dumb-arrow' class='arrow desktop'>
 			</div>
 
-			<div id='experience' class='window slideable {{projects}}'>
-				<h1>Here is my Experience!</h1>
-				<div class='project'>
-					<p>I taught <a href='https://www.tamesmusic.com/about-us.html'>this guy</a> everything he knows about guitar from the ground up...before he was cool.</p>
+			<div id='projects' class='window {{projects}}'>
+				<div id='projects-navbar'>
+					<div class='projects-nav-link projects-nav-link-everything selected'>
+						everything
+						<div class='projects-bar bar-word-everything'></div>
+					</div>
+					<div class='projects-nav-link projects-nav-link-not-code'>
+						not-code
+						<div class='projects-bar bar-word-not-code'></div>
+					</div>
+					<div class='projects-nav-link projects-nav-link-code'>
+						code
+						<div class='projects-bar'></div>
+					</div>
 				</div>
-				<div class='project'>
-					<p>So many <a href='https://www.youtube.com/watch?v=JHZOAsQvsWw'>video shoots</a> with Dakota Jiminez</p>
+				<div id='projects-container'>
+
+					<div class='project not-code tames-music'>
+						<div class='top-box'>
+							<p>Lessons, Guitar</p>
+						</div>
+						<div class='visit-site'>
+							<a href='https://www.tamesmusic.com/about-us.html'>
+								<button type='button' class='btn btn--md btn--red projects-btn'>Visit Site</button>
+							</a>
+						</div>
+							<img  class='project-main-image' src='{% static "images/tames_music.jpg" %}'>
+						<div class='bottom-box'>
+							<p>I taught this guy most of what he knows about the guitar...before he was cool</p>
+						</div>	
+					</div>
+
+					<div class='project code playchessgames'>
+						<div class='top-box'>
+							<p>Node.js, sockets</p>
+						</div>
+						<div class='visit-site'>
+							<a href=''>
+								<button type='button' class='btn btn--md btn--red projects-btn'>Visit Site</button>
+							</a>
+						</div>
+						<div class='bottom-box'>
+							<p>playchessgames.com</p>
+						</div>
+						<img class='project-main-image' src='{% static "images/random-chess-piece.jpeg" %}'>
+					</div>
+
+					<div class='project not-code dakota-jiminez'>
+						<div class='top-box'>
+							<p>guitar, studio performance</p>
+						</div>
+						<div class='visit-site'>
+							<a href='http://dakotajimenez.com/'>
+								<button type='button' class='btn btn--md btn--red projects-btn'>Visit Site</button>
+							</a>
+						</div>
+						<div class='bottom-box'>
+							<p>So many video shoots with Dakota Jiminez</p>
+						</div>
+						<img class='project-main-image' src='{% static "images/dakota_photoshoot.jpg" %}'>
+					</div>
+
+				</div>
+
+				<div id='projects-footer'>
+						
 				</div>
 			</div>
 		</div>

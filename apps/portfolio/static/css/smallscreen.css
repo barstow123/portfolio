@@ -16,8 +16,7 @@
 	padding-left: 20px;
 	padding-right: 20px;
 	width: calc(100% - 40px);
-	height: calc(100% - 70px);
-	/* overflow-y: scroll; */
+	/*height: calc(100% - 20px);*/
 }
 
 #mobile-header {
@@ -51,6 +50,10 @@
 	margin-left: 20px;
 	margin-top: 20px;
 	margin-right: 20px;
+}
+
+#contact {
+	overflow-y: scroll;
 }
 
 .contact-form {
@@ -106,18 +109,24 @@
 
 .social {
 	position: relative;
-	margin-top: 200px;
+	text-align: center;
+	bottom: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.desktop-social {
+	display: none;
 }
 
 .mobile-icon-container {
-	margin-top: -130px;
-	height: 120px;
 	width: 100%;
 }
 
-.icon {
+.mobile-icon-container a {
 	vertical-align: top;
-	margin-left: 10%;
+	margin-left: 12%;
+	margin-top: 40px;
 }
 
 
@@ -194,4 +203,41 @@
 
 .artwork {
 	margin-left: -50px;
+}
+
+.code-words {
+	display: none;
+}
+
+.or-email-me {
+	display: none;
+}
+
+.or-email-me-mobile {
+	margin-top: 10px;
+	font-size: 0.9em;
+	font-family: 'K2D', sans-serif;
+}
+
+.mobile-footer-box {
+	background-color: #222;
+	position: relative;
+	width: 100vw;
+	height: 120px;
+	margin-left: -20px;
+	bottom: 0px;
+}
+
+/*single collum projects styles are located in the projects.css file under media queries */
+
+@media (min-width: 400px) {
+	.mobile-icon-container a {
+		margin-left: 13%;
+	}
+}
+
+@media (min-width: 430px) {
+	.mobile-icon-container a {
+		margin-left: 14%;
+	}
 }

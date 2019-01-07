@@ -41,7 +41,7 @@ def calendar(request):
 	return render(request, 'portfolio_pages/portfolio.html', data)
 
 def projects(request):
-	data = {'portfolio': 'desabled',
+	data = {'portfolio': 'disabled',
 		'contact': 'disabled',
 		'calendar': 'disabled',
 		'bio': 'disabled',

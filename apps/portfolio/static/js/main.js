@@ -44,27 +44,28 @@ function manageWindowsView() {
 	}
 }
 
-function animateWindow(window) {
-
-	if ($('#'+window).hasClass('able')){ return; }
+function animateWindow(window, firstLoad=false) {
 
 	function setActiveWindow() {
-		console.log('setting active window');
 		$('.able').addClass('disabled').removeClass('able');
 		$('#'+window).addClass('able').removeClass('disabled');
-		$('.disabled.slideable').css('margin-left', '100%');
-		$('.disabled.slideable-up').css('margin-top', '100%');
 	}
 
 	function prepareWindow() {
 		if (window == 'home-page'){
 			$('#'+window).css({'margin-left': '0px'});
 			$('#'+window).fadeIn();
-		} else if($('#'+window).hasClass('window')) {
-			$('#'+window).show();
+		}
+		if($('#'+window).hasClass('window')) {
+			setTimeout(function() {
+				$('#'+window).show();
+			}, 201);
 			//$('#'+window).css({'height': '100%', 'width': '100%'});
-		} 
+		}
 
+		if (window == 'projects') {
+			prepareProjectsWindow();
+		}
 		if ($('#'+window).hasClass('slideable-up')) {
 			$('#'+window).scrollTop(0);
 		}
@@ -77,43 +78,82 @@ function animateWindow(window) {
 			return;
 		}
 		if(window == 'contact') {
-			$('.show input').val('');
-			$('.email-catcher').html('');
-			$('.name-catcher').html('');
-			if ($('.show').hasClass('return-email')) {
-				setTimeout(function() {
-					formScript = new Typed('.email-catcher', {
-						strings: ['this@example.com'],
-						typeSpeed: 10,
-						onComplete: function() {
-					    	document.querySelector('.typed-cursor').remove();
-					    }
-					});
-				}, 600);
-				$('.email-catcher').click(() => {$('.show input').focus()});
-			}
-			if ($('.show').hasClass('name')) {
-				setTimeout(function() {
-					formScript = new Typed('.email-catcher', {
-						strings: ['John Doe'],
-						typeSpeed: 10,
-						onComplete: function() {
-					    	document.querySelector('.typed-cursor').remove();
-					    }
-					});
-				}, 600);
-				$('.name-catcher').click(() => {$('.show input').focus()});
-			}
+			setTimeout(function() {
+				$('.show input').val('');
+				$('.email-catcher').html('');
+				$('.name-catcher').html('');
+				if ($('.show').hasClass('return-email')) {
+					setTimeout(function() {
+						formScript = new Typed('.email-catcher', {
+							strings: ['this@example.com'],
+							typeSpeed: 10,
+							onComplete: function() {
+								document.querySelector('.typed-cursor').remove();
+							}
+						});
+					}, 600);
+					$('.email-catcher').click(() => {$('.show input').focus()});
+				}
+				if ($('.show').hasClass('name')) {
+					setTimeout(function() {
+						formScript = new Typed('.email-catcher', {
+							strings: ['John Doe'],
+							typeSpeed: 10,
+							onComplete: function() {
+								document.querySelector('.typed-cursor').remove();
+							}
+						});
+					}, 600);
+					$('.name-catcher').click(() => {$('.show input').focus()});
+				}
+			}, 200);
+		}
+		if (window == 'projects') {
+			animateProjectsWindowIn();
 		}
 		if ($('#'+window).hasClass('slideable')) {
-			console.log('animating window: '+window);
-			$('#'+window).animate({'margin-left': '0px'}, 300);
+
+			setTimeout(function() {
+				const windowStyler = popmotion.styler(document.getElementById(window));
+				console.log('animating window: '+window);
+				popmotion.tween({
+					from: {
+						x: '100%'
+					},
+					to: {
+						x: '0%'
+					},
+					duration: 300,
+					ease: popmotion.easing.easeOut
+				}).start(windowStyler.set);
+			}, 200);
+	
 		} else if($('#'+window).hasClass('slideable-up')){
-			console.log('animating window-up: '+window);
-			$('#'+window).animate({'margin-top': '0px'}, 300);
+
+			setTimeout(function() {
+				const windowStyler = popmotion.styler(document.getElementById(window));
+
+				console.log('animating window-up: '+window);
+				popmotion.tween({
+					from: {
+						y: '100%'
+					},
+					to: {
+						y: '0%'
+					},
+					duration: 300,
+					ease: popmotion.easing.easeOut
+				}).start(windowStyler.set);
+			}, 200);
 		}
 	}
 
+	if ($('#'+window).hasClass('able') && firstLoad == false) { return; }
+	if (firstLoad) {
+		prepareWindow();
+		doAnimation();
+		return;
+	}
 	prepareWindow();
 	$('.able').fadeOut();
 	setTimeout(setActiveWindow, 300);
@@ -123,6 +163,7 @@ function animateWindow(window) {
 function setHandlers() {
 
 	setFormHandlers();
+	setProjectsHandlers();
 
 }
 
@@ -166,6 +207,7 @@ function animateMainContent() {
 		$('.main-header').css('opacity', '0');
 		$('.open-script').html('');
 		$('.close-script').html('');
+		$('#main-content').removeClass('unloaded');
 	}
 
 	prepareMainWindow();
@@ -175,6 +217,9 @@ function animateMainContent() {
 $(document).ready(function() {
 
 	function fadeContentIn() {
+
+		$('.unloaded').removeClass('unloaded');
+
 		let delay = 400;
 		$('.home-note').delay(100).animate({'opacity':'1'},600);
 		
@@ -202,16 +247,23 @@ $(document).ready(function() {
 		
 	
 	if ($('.able').hasClass('home')) {
+		// if the page is loaded from the home page
 		animateMainContent();
 		setTimeout(fadeContentIn, 2000);
 		setTimeout(animateMobileContentIn, 2000);
+		setTimeout(setSlideHandlers, 2500);
 	} else {
-		fadeContentIn();
+		// if the page is loaded from a location other than the home page
+		var curPage = $('.able').attr('id');
+		setTimeout( () => {
+			animateWindow(curPage, firstLoad=true);
+			fadeContentIn();
+		}, 100);
 		animateMobileContentIn();
+		setTimeout(setSlideHandlers, 730);
 	}
 	setHandlers();
+	setMobileHandlers();
 	manageWindowsView();
 	setDefaultFormView();
-	setMobileHandlers();
-	setTimeout(setSlideHandlers, 2500);
 });

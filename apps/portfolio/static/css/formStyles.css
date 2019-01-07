@@ -81,7 +81,7 @@
 	position: absolute;
 }
 
-.name-label, .message-label {
+.name-label, .message-label, .thank-you-label {
 	opacity: 0;
 }
 
@@ -125,9 +125,9 @@
     color: #777;
 }
 
-.social {
-	bottom: 150px;
-	position: absolute;
+.desktop-social {
+    position: absolute;
+    bottom: 150px;
 }
 
 .arrow {
@@ -140,8 +140,8 @@
 	position: absolute;
     bottom: 0px;
     width: 400px;
-    left: calc(100% - 450px);
-    display: none;
+    left: 900px;
+    top: 100px;
 }
 
 .interactive-words {
@@ -150,4 +150,10 @@
     opacity: 0;
     padding-top: 5px;
     font-family: 'Roboto Mono', monospace;
+}
+
+.or-email-me {
+    font-size: 1.5em;
+    font-family: 'K2D', sans-serif;
+    margin-top: 30px;
 }

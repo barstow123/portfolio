@@ -1,4 +1,5 @@
 function setDefaultFormView() {
+
 	$('.name-input').hide();
 	$('.message-input').hide();
 	function updateText(event){
@@ -17,7 +18,9 @@ function setDefaultFormView() {
  	$(".name-input").change(updateText);
 
  	$(".email-input").keydown(updateText);
- 	$(".email-input").change(updateText);
+	$(".email-input").change(updateText);
+	 
+	$('.thank-you-label').hide();
 
  	$(".email-catcher").click(function() {
 	  $(".email-input").focus();
@@ -52,9 +55,7 @@ function animateForm(version='desktop') {
 	}
 }
 
-function setFormHandlers() {
-
-	console.log('setting form handlers');
+function setNextButton() {
 
 	$('.mobile-next-btn').click(function() {
 
@@ -74,7 +75,7 @@ function setFormHandlers() {
 			animateForm('mobile');
 		}
 		setTimeout(() => {
-			setFormHandlers();
+			setNextButton();
 		}, 800);
 		$('.next-btn').unbind('click');
 		$('.mobile-next-btn').unbind('click');
@@ -101,20 +102,34 @@ function setFormHandlers() {
 			animateForm('desktop');
 		}
 		setTimeout(() => {
-			setFormHandlers();
+			setNextButton();
 		}, 800);
 		$('.next-btn').unbind('click');
 		$('.mobile-next-btn').unbind('click');	
 	})
 }
 
+function setFormHandlers() {
+
+	console.log('setting form handlers');
+	setNextButton();
+	$('.submitter').click(() => {
+		messageOut();
+		$('.next-btn, .mobile-nxt-btn').unbind('click');
+		onFormSubmitAnimation();
+	});
+	
+}
+
 const nameLabelStyler = popmotion.styler(document.querySelector('.name-label'));
 const emailLabelStyler = popmotion.styler(document.querySelector('.email-label'));
+const messageInputStyler = popmotion.styler(document.querySelector('.message-input'));
 const messageLabelStyler = popmotion.styler(document.querySelector('.message-label'));
 const emailContainerStyler = popmotion.styler(document.querySelector('.email-container'));
 const emailActiveStyler = popmotion.styler(document.querySelector('.email-active'));
 const userContainerStyler = popmotion.styler(document.querySelector('.user-container'));
 const userActiveStyler = popmotion.styler(document.querySelector('.user-active'));
+const thankYouLabelStyler = popmotion.styler(document.querySelector('.thank-you-label'));
 
 function emailOut() {
 
@@ -297,8 +312,6 @@ function messageIn(version = 'desktop') {
 		ease: popmotion.easing.easeOut
 	}).start(messageLabelStyler.set);
 
-	const messageInputStyler = popmotion.styler(document.querySelector('.message-input'));
-
 	if (version == 'desktop') {
 
 		setTimeout(function() {
@@ -326,7 +339,7 @@ function messageIn(version = 'desktop') {
 					height: 5
 				},
 				to: {
-					width: width-54,
+					width: width-56,
 					height: 135
 				},
 					duration: 600,
@@ -335,6 +348,33 @@ function messageIn(version = 'desktop') {
 		}, 100);
 	}
 
+}
+
+function onFormSubmitAnimation(version = 'Desktop') {
+	$('.thank-you-label').show();
+	$('.message-input').hide();
+	popmotion.tween({
+		from: {
+			opacity: 0
+		},
+		to: {
+			opacity: 1
+		},
+		duration: 0
+	}).start(thankYouLabelStyler.set);
+
+	popmotion.tween({
+		from: {
+			x: 300,
+			opacity: 0
+		},
+		to: {
+			x: 0,
+			opacity: 1
+		},
+		duration: 400,
+		ease: popmotion.easing.easeOut
+	}).start(thankYouLabelStyler.set);
 }
 
 function animateEmailIcon(version = 'desktop') {
