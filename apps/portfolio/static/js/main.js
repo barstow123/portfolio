@@ -11,7 +11,9 @@ function setSlideHandlers() {
 	$('.sidebar-btn').click(function() {
 		let name = $(this).attr('data-window-id');
 		animateWindow(name)
-		window.history.pushState({}, '', `/${name}`);
+		if (name != 'calendar') {
+			window.history.pushState({}, '', `/${name}`);
+		}
 	})
 
 	$('.home-note').click(function() {
@@ -44,40 +46,40 @@ function manageWindowsView() {
 	}
 }
 
-function animateWindow(window, firstLoad=false) {
+function animateWindow(windowName, firstLoad=false) {
 
 	function setActiveWindow() {
 		$('.able').addClass('disabled').removeClass('able');
-		$('#'+window).addClass('able').removeClass('disabled');
+		$('#'+windowName).addClass('able').removeClass('disabled');
 	}
 
-	function prepareWindow() {
-		if (window == 'home-page'){
-			$('#'+window).css({'margin-left': '0px'});
-			$('#'+window).fadeIn();
+	function prepareWindow(delay = 205) {
+		if (windowName == 'home-page'){
+			$('#'+windowName).css({'margin-left': '0px'});
+			$('#'+windowName).fadeIn();
 		}
-		if($('#'+window).hasClass('window')) {
+		if($('#'+windowName).hasClass('window')) {
 			setTimeout(function() {
-				$('#'+window).show();
-			}, 201);
-			//$('#'+window).css({'height': '100%', 'width': '100%'});
+				$('#'+windowName).show();
+			}, delay);
+			//$('#'+windowName).css({'height': '100%', 'width': '100%'});
 		}
 
-		if (window == 'projects') {
+		if (windowName == 'projects') {
 			prepareProjectsWindow();
 		}
-		if ($('#'+window).hasClass('slideable-up')) {
-			$('#'+window).scrollTop(0);
+		if ($('#'+windowName).hasClass('slideable-up')) {
+			$('#'+windowName).scrollTop(0);
 		}
 	}
 
-	function doAnimation() {
-		if (window == 'home-page') {
+	function doAnimation(delay = 200) {
+		if (windowName == 'home-page') {
 			//$('.home').fadeIn();
 			animateMainContent();
 			return;
 		}
-		if(window == 'contact') {
+		if(windowName == 'contact') {
 			setTimeout(function() {
 				$('.show input').val('');
 				$('.email-catcher').html('');
@@ -106,16 +108,16 @@ function animateWindow(window, firstLoad=false) {
 					}, 600);
 					$('.name-catcher').click(() => {$('.show input').focus()});
 				}
-			}, 200);
+			}, delay);
 		}
-		if (window == 'projects') {
+		if (windowName == 'projects') {
 			animateProjectsWindowIn();
 		}
-		if ($('#'+window).hasClass('slideable')) {
+		if ($('#'+windowName).hasClass('slideable')) {
 
 			setTimeout(function() {
-				const windowStyler = popmotion.styler(document.getElementById(window));
-				console.log('animating window: '+window);
+				const windowStyler = popmotion.styler(document.getElementById(windowName));
+				console.log('animating window: '+windowName);
 				popmotion.tween({
 					from: {
 						x: '100%'
@@ -126,12 +128,12 @@ function animateWindow(window, firstLoad=false) {
 					duration: 300,
 					ease: popmotion.easing.easeOut
 				}).start(windowStyler.set);
-			}, 200);
+			}, delay);
 	
-		} else if($('#'+window).hasClass('slideable-up')){
+		} else if($('#'+windowName).hasClass('slideable-up')){
 
 			setTimeout(function() {
-				const windowStyler = popmotion.styler(document.getElementById(window));
+				const windowStyler = popmotion.styler(document.getElementById(windowName));
 
 				console.log('animating window-up: '+window);
 				popmotion.tween({
@@ -144,20 +146,39 @@ function animateWindow(window, firstLoad=false) {
 					duration: 300,
 					ease: popmotion.easing.easeOut
 				}).start(windowStyler.set);
-			}, 200);
+			}, delay);
 		}
 	}
 
-	if ($('#'+window).hasClass('able') && firstLoad == false) { return; }
-	if (firstLoad) {
-		prepareWindow();
-		doAnimation();
+	if (windowName == 'calendar') {
+		//					THIS IS THE BLOCK OF CODE WHICH PREVENTS THE CALENDAR PAGE FROM DISPLAYING
+		//		
+		//				to enable the calendar:
+		//					* delete the following block of code
+		//					* add a route for /calendar in the routes file of this project	
+		//					* remove the if statement testing for the calendar window on the handlers' setHandlers() method		
+		if (!$('.calendar-alert').hasClass('displaying')) {
+			$('.calendar-alert').addClass('displaying');
+			$('.calendar-alert').animate({'opacity': 1}, 300);
+			setTimeout(function() {
+				$('.calendar-alert').animate({'opacity': 0}, 300);
+			}, 1200);
+			setTimeout(function() {
+				$('.calendar-alert').removeClass('displaying');
+			}, 1500);
+		}
 		return;
 	}
-	prepareWindow();
-	$('.able').fadeOut();
-	setTimeout(setActiveWindow, 300);
-	doAnimation();
+	if ($('#'+windowName).hasClass('able') && firstLoad == false) { return; }
+	if (firstLoad) {
+		prepareWindow(delay = 0);
+		doAnimation(delay = 0);
+	} else {
+		prepareWindow();
+		$('.able').fadeOut();
+		setActiveWindow();
+		doAnimation();
+	}
 }
 
 function setHandlers() {
@@ -255,8 +276,8 @@ $(document).ready(function() {
 	} else {
 		// if the page is loaded from a location other than the home page
 		var curPage = $('.able').attr('id');
+		animateWindow(curPage, firstLoad=true);
 		setTimeout( () => {
-			animateWindow(curPage, firstLoad=true);
 			fadeContentIn();
 		}, 100);
 		animateMobileContentIn();

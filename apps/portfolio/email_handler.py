@@ -21,7 +21,7 @@ def send_message(name, email, content):
 	# set up the SMTP server
 	s = smtplib.SMTP(host='smtp.gmail.com', port=587)
 	s.starttls()
-	s.login('abarstowtx@gmail.com', 'Oicui812')
+	s.login('barstowwebservice@gmail.com', 'Oicui8!@')
 
 	# For each contact, send the email:
 	msg = MIMEMultipart()       # create a message
@@ -33,9 +33,9 @@ def send_message(name, email, content):
 	print(message)
 
 	# setup the parameters of the message
-	msg['From']='abarstowtx@gmail.com'
-	msg['To']='fatbubble123@gmail.com'
-	msg['Subject']="GENERATED MESSAGE"
+	msg['From']='barstowwebservices@gmail.com'
+	msg['To']='abarstowtx@gmail.com'
+	msg['Subject']="MESSAGE FROM andrewbarstow.com"
     
 	# add in the message body
 	msg.attach(MIMEText(message, 'plain'))

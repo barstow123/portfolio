@@ -52,6 +52,8 @@ function animateForm(version='desktop') {
 			emailOut();
 		}
 		messageIn(version);
+		document.getElementsByClassName('submit-btn')[0].disabled = false;
+		$('.submit-btn').animate({'background-color': '#ca1906', 'color': 'black'});
 	}
 }
 

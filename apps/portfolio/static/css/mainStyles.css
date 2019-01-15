@@ -110,6 +110,8 @@
 	display: inline-block;
 	overflow: hidden;
 	position: fixed;
+	padding-top: 40px;
+	padding-left: 30px;
 }
 
 #bio {
@@ -168,7 +170,7 @@
 	display: none;
 }
 
-.mobile-silde-box {
+.mobile-slide-box {
 	display: none;
 }
 
@@ -195,6 +197,12 @@
 
 .sidebar-btn:first-child {
 	margin-top: 24vh;
+}
+
+.calendar-alert {
+	font-size: .7em;
+	color: #ca1906;
+	opacity: 0;
 }
 
 .sidebar-btn p {
