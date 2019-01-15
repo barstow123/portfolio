@@ -5,7 +5,9 @@ function setMobileHandlers() {
 	$('.mobile-slide-box').click(function() {
 		let name = $(this).attr('data-window-id');
 		animateWindow(name)
-		window.history.pushState({}, '', `/${name}`);
+		if (name != 'calendar') {
+			window.history.pushState({}, '', `/${name}`);
+		}
 	})
 
 	$('.mobile-home-note').click(function() {

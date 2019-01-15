@@ -151,12 +151,14 @@ function animateWindow(windowName, firstLoad=false) {
 	}
 
 	if (windowName == 'calendar') {
-		//					THIS IS THE BLOCK OF CODE WHICH PREVENTS THE CALENDAR PAGE FROM DISPLAYING
-		//		
-		//				to enable the calendar:
-		//					* delete the following block of code
-		//					* add a route for /calendar in the routes file of this project	
-		//					* remove the if statement testing for the calendar window on the handlers' setHandlers() method		
+		/*					THIS IS THE BLOCK OF CODE WHICH PREVENTS THE CALENDAR PAGE FROM DISPLAYING
+			
+						to enable the calendar:
+							* delete the following block of code
+							* add a route for /calendar in the routes file of this project	
+							* remove the if statement testing for the calendar window on the handlers' setHandlers() method	
+								and the setMobileHandlers() method.
+		*/	
 		if (!$('.calendar-alert').hasClass('displaying')) {
 			$('.calendar-alert').addClass('displaying');
 			$('.calendar-alert').animate({'opacity': 1}, 300);
