@@ -14,7 +14,18 @@
     border-radius: 20px;
 }
 
+@media (max-width: 960px) and (min-width: 865px) {
+    .contact-form {
+        width: calc(100vw - 960px + 700px);
+    }
+}
 
+@media (max-width: 865px) {
+    .contact-form {
+        padding-left: calc(80px - (865px - 100vw));
+        width: 605px;
+    }
+}
 
 .contact-form label {
 	display: inline;

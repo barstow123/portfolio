@@ -16,6 +16,7 @@
 	<link rel="stylesheet" type="text/css" href='{% static "css/mainStyles.css" %}'>
 	<link rel="stylesheet" type='text/css' href='{% static "css/formStyles.css" %}'>
 	<link rel="stylesheet" type="text/css" href='{% static "css/projects.css" %}'>
+	<link rel='stylesheet' type='text/css' href='{% static "css/bio.css" %}'>
 	<link rel="stylesheet" media="screen and (max-width: 652px)" href="{% static 'css/smallscreen.css' %}">
 	<link rel="stylesheet" media="screen and (min-width: 652px) and (max-width: 800px)" href='{% static "css/flipscreen.css" %}'>
 	<link href="https://fonts.googleapis.com/css?family=K2D" rel="stylesheet">
@@ -86,10 +87,45 @@
 
 			<div id='bio' class='window slideable-up {{bio}}'>
 				<h1>This is my Bio</h1>
-				<div class='test'>
-					<p>the long version of my Elevator pitch goes here. The long version also goes on my linked in summary</p>
-					<p>the short version of the elevator pitch goes in my resume</p>
-					<p>download resume</p>
+				<div class='info-container'>
+					<p>I am web developer/software engineer, and music lessons business owner. 
+I have a flexible, and plastic personality with a deep passion for solving problems and writing great code.
+My experience leads me to have a strong skill set with business management, and customer relations. My unique interest
+in front end design drives my technological career.</p>
+					<p>languages:</p>
+					<ul>
+						<li>Javascript</li>
+						<li>Python</li>
+						<li>Ruby</li>
+						<li>HTML</li>
+						<li>CSS</li>
+						<li>Java</li>
+					</ul>
+					<p>back end skills:</p>
+					<ul>
+						<li>MEAN development (MongoDB, Express.js, Angular, Node.js)</li>
+						<li>Flask</li>
+						<li>Django</li>
+						<li>Ruby On Rails</li>
+						<li>Databate technology (MySQL, PostgreSQL, NoSQL, SQLite)</li>
+					</ul>
+					<p>front end skills:</p>
+					<ul>
+						<li>React/React Native</li>
+						<li>popmotion animation</li>
+						<li>bootstrap</li>
+					</ul>
+					<div class='download-resume'>
+						<a href='{% static "images/Resume.pdf" %}' class='downloader' download>download resume</a>
+					</div>
+				</div>
+				<div class='properties-container'>
+					<div class='reflexive-design'>
+						<p>reflexive design</p>
+					</div>
+					<div class='comprehensive-animation'>
+						<p>comprehensive animation</p>
+					</div>
 				</div>
 			</div>
 

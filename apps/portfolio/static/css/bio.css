@@ -1,0 +1,20 @@
+.info-container {
+    width: 700px;
+    display: inline-block;
+}
+
+.download-resume {
+    vertical-align: bottom;
+    display: table-cell;
+    height: 100px;
+}
+
+.reflexive-design, .comprehensive-animation {
+    display: block;
+    width: 300px;
+    height: 75px;
+}
+
+.properties-container {
+    display: inline-block;
+}

@@ -26,6 +26,37 @@ function animateProjectsWindowIn() {
 
     popmotion.stagger(projectsPreparations, 0)
         .start((v) => v.forEach((y, i) => projectsStylers[i].set('y', y)));
+
+    //prevents scrolling during initial animation of projects window
+    $('#projects').on('scroll touchmove mousewheel', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+    });
+
+    function setProjectsContainerSize() {
+        if (document.body.clientWidth >= 985) {
+            // if 3 collums
+            $('#projects-container').css('height', '322px');
+        } else if (document.body.clientWidth >= 600) {
+            //if 2 collums
+            $('#projects-container').css('height', '632px');
+        }
+    }
+
+    window.onresize = null;
+    if (document.body.clientWidth >= 985) {
+        // if 3 collums
+        $('#projects-container').css('height', '450px')
+    }
+    
+
+    setTimeout(function() {
+        $('#projects').off('scroll touchmove mousewheel');
+        setProjectsContainerSize();
+        window.onresize = setProjectsContainerSize;
+    }, 1300);
+    
     
     setTimeout(() => {
         popmotion.stagger(projectsAnimations, 150)
