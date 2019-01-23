@@ -1,6 +1,35 @@
-.info-container {
-    width: 700px;
+#bio {
+    font-family: 'Roboto mono', monospace;
+}
+
+#bio-left-side {
+    width: 50%;
     display: inline-block;
+}
+
+#bio-right-side {
+    width: 50%;
+    display: inline-block;
+    visibility: hidden;
+}
+
+.portrait {
+    height: 200px;
+}
+
+.info-container {
+    width: 100%;
+    display: inline-block;
+    line-height: 1.2;
+    padding-top: 20px;
+}
+
+.languages, .back-end-skills, .front-end-skills {
+    padding-top: 15px;
+}
+
+.languages-list, .back-end-skills-list, .front-end-skills-list {
+    font-family: wood-xmas;
 }
 
 .download-resume {
@@ -17,4 +46,28 @@
 
 .properties-container {
     display: inline-block;
+}
+
+.top-box-bio {
+    height: 25px;
+    width: 100px;
+    background-color: #444;
+    border-color: #AAA;
+    border-bottom: 1px, solid;
+    border-left: 1px, solid;
+    border-radius: 2px;
+    position: relative;
+    top: 20;
+}
+
+.bottom-box-bio {
+    height: 25px;
+    width: 100px;
+    background-color: #333;
+    border-color: #AAA;
+    border-top: 1px, solid;
+    border-left: 1px, solid;
+    border-radius: 2px;
+    position: relative;
+    bottom: 0;
 }

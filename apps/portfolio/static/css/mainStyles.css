@@ -81,10 +81,6 @@
 	opacity: 0.0;
 }
 
-#projects {
-	
-}
-
 .open-script, .close-script {
 	display: inline;
 	position: fixed;
@@ -120,9 +116,6 @@
 
 .test {
 	width: 300px;
-}
-
-#calendar {
 }
 
 #contact {
