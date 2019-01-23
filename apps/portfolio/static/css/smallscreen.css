@@ -54,6 +54,11 @@
 
 #home-page {
 	padding: 0px;
+	height: 100%;
+}
+
+#bio-left-side, #bio-right-side {
+	width: 100%;
 }
 
 #contact {
@@ -117,6 +122,7 @@
 	bottom: auto;
 	margin-top: 20px;
 	margin-bottom: 20px;
+	font-family: 'K2D', sans-serif;
 }
 
 .desktop-social {
