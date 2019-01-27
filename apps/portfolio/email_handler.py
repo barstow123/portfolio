@@ -17,7 +17,7 @@ def read_template(filename):
 
 def send_message(name, email, content):
 	# read contacts
-	message_template = read_template('C:/Users/abars/Documents/Development/Professional_Projects/My Website/My_Website/apps/portfolio/email_template.txt')
+	message_template = read_template('email_template.txt')
 	# set up the SMTP server
 	s = smtplib.SMTP(host='smtp.gmail.com', port=587)
 	s.starttls()
