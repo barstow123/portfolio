@@ -1,9 +1,13 @@
 import smtplib
-
+import os
 from string import Template
 
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+
+script_dir = os.path.dirname(__file__) #<-- absolute dir the script is in
+rel_path = "email_template.txt"
+abs_file_path = os.path.join(script_dir, rel_path)
 
 def read_template(filename):
     """
@@ -17,7 +21,7 @@ def read_template(filename):
 
 def send_message(name, email, content):
 	# read contacts
-	message_template = read_template('email_template.txt')
+	message_template = read_template(abs_file_path)
 	# set up the SMTP server
 	s = smtplib.SMTP(host='smtp.gmail.com', port=587)
 	s.starttls()
