@@ -4,15 +4,18 @@
 	{% load static %}
 	<meta charset='UTF-8'>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--HOSTED JAVASCRIPT -->
 	<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/treble-clef.png' %}"/>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script defer src="http://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
 	<script src="https://unpkg.com/popmotion/dist/popmotion.global.min.js"></script>
+	<!--LOCAL JAVASCRIPT -->
 	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
 	<script defer src='{% static "js/projects.js" %}'></script>
 	<script defer src='{% static "js/mobile.js" %}'></script>
 	<script defer src='{% static "js/formScripts.js" %}'></script>
 	<script defer src='{% static "js/main.js" %}'></script>
-	<script defer src="http://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
+	<!-- LOCAL CSS -->
 	<link rel="stylesheet" type='text/css' href='{% static "pushy-buttons-master/pushy-buttons-master/css/pushy-buttons.min.css" %}'>
 	<link rel="stylesheet" type="text/css" href='{% static "css/mainStyles.css" %}'>
 	<link rel="stylesheet" type='text/css' href='{% static "css/formStyles.css" %}'>
@@ -20,6 +23,7 @@
 	<link rel='stylesheet' type='text/css' href='{% static "css/bio.css" %}'>
 	<link rel="stylesheet" media="screen and (max-width: 652px)" href="{% static 'css/smallscreen.css' %}">
 	<link rel="stylesheet" media="screen and (min-width: 652px) and (max-width: 800px)" href='{% static "css/flipscreen.css" %}'>
+	<!-- HOSTED FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=K2D" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -101,7 +105,7 @@
 						<p class='back-end-skills'><strong>back end skills:</strong></p>
 						<p><span class='back-end-skills-list'>MEAN development (MongoDB, Express.js, Angular, Node.js), Flask, Django, Ruby on Rails, Database technology (MySQL, PostgreSQL, NoSQL, SQLite)</span></p>
 						<p class='front-end-skills'><strong>front end skills:</strong></p>
-						<p><span class='front-end-skills-list'>React/React Native, popmotion animation, bootstrap</span></p>
+						<p><span class='front-end-skills-list'>React, popmotion animation, bootstrap</span></p>
 						<div class='download-resume'>
 							<a href='{% static "images/Resume.pdf" %}' class='downloader' download>download resume</a>
 						</div>
@@ -223,17 +227,17 @@
 
 					<div class='project code playchessgames'>
 						<div class='top-box'>
-							<p>Node.js, sockets</p>
+							<p>Node.js, React, Gatsby</p>
 						</div>
 						<div class='visit-site'>
-							<a href=''>
+							<a href='http://www.smashcombos.com'>
 								<button type='button' class='btn btn--md btn--red projects-btn'>Visit Site</button>
 							</a>
 						</div>
 						<div class='bottom-box'>
-							<p>playchessgames.com</p>
+							<p>contributions to an open source web app for gamers which supports thousands of users.</p>
 						</div>
-						<img class='project-main-image' src='{% static "images/random-chess-piece.jpeg" %}'>
+						<img class='project-main-image' src='{% static "images/smashcombos.png" %}'>
 					</div>
 
 					<div class='project not-code dakota-jiminez'>
