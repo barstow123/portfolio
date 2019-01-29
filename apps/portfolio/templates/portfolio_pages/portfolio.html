@@ -150,11 +150,11 @@
 						<div class='form-input-label-container'>
 						{% csrf_token %}
 						<label for='onsubmit' class='thank-you-label'>Thank you! :)</label>
-						<div class='show return-email unfilled'>
+						<div class='show return-email unfille	d'>
 							<label for='return-address' class='email-label'>please enter a return email address...</label>
 							<label for='message' class='message-label'>now, what did you want to talk about?</label>
 							<label for='name' class='name-label'>please enter your name...</label>
-							<input type='email' id='return-address' name='return-address' value='' class='email-input'>
+							<input type='text' id='return-address' name='returnaddress' value='' class='email-input'>
 						</div>
 						<div class='hide name unfilled'>
 							<input type='text' id='name' name='name' value='' class='name-input'>
