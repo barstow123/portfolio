@@ -20,7 +20,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 #Google reCAPTCHA setcret key
-GOOGLE_RECAPTCHA_SECRET_KEY = config('GOOGLE_RECAPTCHA_SECRET_KEY')
+GOOGLE_RECAPTCHA_SECRET_KEY = 'GOOGLE_RECAPTCHA_SECRET_KEY'
+RECAPTCHA_PRIVATE_KEY = config('GOOGLE_RECAPTCHA_SECRET_KEY')
+RECAPTCHA_PUBLIC_KEY = '6LfdXI8UAAAAAEiGSItQ8L9D-mVbo4F8b5UYiMdJ'
+RECAPTCHA_DEFAULT_ACTION = 'generic'
+RECAPTCHA_SCORE_THRESHOLD = 0.5
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config("SECRET_KEY")
@@ -41,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'snowpenguin.django.recaptcha3'
 ]
 
 MIDDLEWARE = [
