@@ -47,3 +47,6 @@ def projects(request):
 		'bio': 'disabled',
 		'projects': 'able'}
 	return render(request, 'portfolio_pages/portfolio.html', data)
+
+def bogus(request):
+	return
