@@ -4,9 +4,8 @@
 	{% load static %}
 	<meta charset='UTF-8'>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/treble-clef.png' %}"/>
 	<!--HOSTED JAVASCRIPT -->
-	<script src="https://www.google.com/recaptcha/api.js?render=6LfdXI8UAAAAAEiGSItQ8L9D-mVbo4F8b5UYiMdJ"></script>
+	<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/treble-clef.png' %}"/>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script defer src="http://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
 	<script src="https://unpkg.com/popmotion/dist/popmotion.global.min.js"></script>
@@ -16,11 +15,6 @@
 	<script defer src='{% static "js/mobile.js" %}'></script>
 	<script defer src='{% static "js/formScripts.js" %}'></script>
 	<script defer src='{% static "js/main.js" %}'></script>
-	<script>
-		grecaptcha.ready(function() {
-	      grecaptcha.execute('6LfdXI8UAAAAAEiGSItQ8L9D-mVbo4F8b5UYiMdJ', {action: 'homepage'});
-	  	});
-	</script>
 	<!-- LOCAL CSS -->
 	<link rel="stylesheet" type='text/css' href='{% static "pushy-buttons-master/pushy-buttons-master/css/pushy-buttons.min.css" %}'>
 	<link rel="stylesheet" type="text/css" href='{% static "css/mainStyles.css" %}'>
@@ -53,7 +47,7 @@
 				<strong><p class='calendar-alert'>coming soon!</p></strong>
 			</div>
 			<div class='mobile-slide-box' data-window-id='bio'><p>Bio</p></div>
-			<div class='mobile-slide-box' data-window-id='projects'><p>Projects</p></div>
+			<div class='mobile-slide-box' data-window-id='projects'><p>projects</p></div>
 		</div>
 		<img src='{% static "images/treble-clef.png" %}' alt='mobile note' class='mobile-home-note' data-window-id='home-page'>
 		<img src='{% static "images/treble-clef.png" %}' alt='musical note' class='home-note' data-window-id='home-page'>
