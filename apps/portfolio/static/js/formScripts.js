@@ -53,7 +53,8 @@ function animateForm(version='desktop') {
 		}
 		messageIn(version);
 		document.getElementsByClassName('submit-btn')[0].disabled = false;
-		$('.submit-btn').animate({'background-color': '#ca1906', 'color': 'black'});
+		//$('.submit-btn').animate({'background-color': '#ca1906', 'color': 'black'});
+		$('.submit-btn').addClass('submittable');
 	}
 }
 

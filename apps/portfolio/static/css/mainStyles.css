@@ -43,6 +43,16 @@
 	background-color: #ca1906;
 }
 
+.btn--black {
+	border: none;
+}
+
+.btn--black:hover {
+	color: #777;
+	background-color: #555;
+	border: none;
+}
+
 #wrapper {
 	background-color: #111;
 	width: 100vw;
