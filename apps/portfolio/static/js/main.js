@@ -48,34 +48,37 @@ function manageWindowsView() {
 
 function animateWindow(windowName, firstLoad=false) {
 
+	const prevWindowStyler = popmotion.styler(document.querySelector('.able'));
+	const windowStyler = popmotion.styler(document.getElementById(windowName));
+
 	function setActiveWindow() {
 		$('.able').addClass('disabled').removeClass('able');
 		$('#'+windowName).addClass('able').removeClass('disabled');
 	}
 
-	function prepareWindow(delay = 205) {
+	function prepareWindow(delay = 5) {
 		if (windowName == 'home-page'){
-			$('#'+windowName).css({'margin-left': '0px'});
-			$('#'+windowName).fadeIn();
-		}
-		if($('#'+windowName).hasClass('window')) {
-			setTimeout(function() {
-				$('#'+windowName).show();
-			}, delay);
-			//$('#'+windowName).css({'height': '100%', 'width': '100%'});
+			animateMainContent();
+			$('#'+windowName).css({'margin-left': '0px'}).show();
+			windowStyler.set({opacity: 1});
 		}
 
 		if (windowName == 'projects') {
 			prepareProjectsWindow();
+		}
+		else if($('#'+windowName).hasClass('window')) {
+			setTimeout(function() {
+				windowStyler.set({opacity: 1});
+				$('#'+windowName).show();
+			}, delay);
 		}
 		if ($('#'+windowName).hasClass('slideable-up')) {
 			$('#'+windowName).scrollTop(0);
 		}
 	}
 
-	function doAnimation(delay = 200) {
+	function doAnimation(delay = 0) {
 		if (windowName == 'home-page') {
-			//$('.home').fadeIn();
 			animateMainContent();
 			return;
 		}
@@ -93,7 +96,7 @@ function animateWindow(windowName, firstLoad=false) {
 								document.querySelector('.typed-cursor').remove();
 							}
 						});
-					}, 600);
+					}, 400);
 					$('.email-catcher').click(() => {$('.show input').focus()});
 				}
 				if ($('.show').hasClass('name')) {
@@ -105,7 +108,7 @@ function animateWindow(windowName, firstLoad=false) {
 								document.querySelector('.typed-cursor').remove();
 							}
 						});
-					}, 600);
+					}, 300);
 					$('.name-catcher').click(() => {$('.show input').focus()});
 				}
 			}, delay);
@@ -116,7 +119,6 @@ function animateWindow(windowName, firstLoad=false) {
 		if ($('#'+windowName).hasClass('slideable')) {
 
 			setTimeout(function() {
-				const windowStyler = popmotion.styler(document.getElementById(windowName));
 				console.log('animating window: '+windowName);
 				popmotion.tween({
 					from: {
@@ -135,7 +137,7 @@ function animateWindow(windowName, firstLoad=false) {
 			setTimeout(function() {
 				const windowStyler = popmotion.styler(document.getElementById(windowName));
 
-				console.log('animating window-up: '+window);
+				console.log('animating window-up: '+ windowName);
 				popmotion.tween({
 					from: {
 						y: '100%'
@@ -177,7 +179,16 @@ function animateWindow(windowName, firstLoad=false) {
 		doAnimation(delay = 0);
 	} else {
 		prepareWindow();
-		$('.able').fadeOut();
+		popmotion.tween({
+			from: {
+				opacity: 1
+			},
+			to: {
+				opacity: 0
+			},
+			duration: 150,
+			ease: popmotion.easing.easeOut
+		}).start(prevWindowStyler.set);
 		setActiveWindow();
 		doAnimation();
 	}
@@ -200,7 +211,7 @@ function animateMainContent() {
 		    	document.querySelector('.typed-cursor').remove();
 		    }
 		});
-		}, 200); 
+		}, 150); 
 
 	setTimeout(function() {
 		closeScript = new Typed('.close-script', {
@@ -210,7 +221,7 @@ function animateMainContent() {
 		    	document.querySelector('.typed-cursor').remove();
 		    }
 		});
-	}, 600); 
+	}, 300); 
 
 	const artworkStyler = popmotion.styler(document.querySelector('.artwork'));
 

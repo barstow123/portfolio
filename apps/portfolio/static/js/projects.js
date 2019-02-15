@@ -1,13 +1,15 @@
 function prepareProjectsWindow() {
-    $('#projects').css('opacity', '0');
-    $('.projects-bar').css('display', 'none');
+    const windowStyler = popmotion.styler(document.getElementById('bio'));
+    $('#projects').show();
+    windowStyler.set({opacity: 0});
+    $('.projects-bar').css('opacity', '0');
 
     setTimeout(() => {
         $('#projects-container').css('opacity','1')	//this line needs to be fixed to hide parent content, but show projects-container
     }, 20);
     setTimeout(() => {
         $('.selected').find('.projects-bar').animate({'opacity': '1', 'height': '4px'}, 150);
-    }, 2000);
+    }, 800);
 }
 
 function animateProjectsWindowIn() {
@@ -55,17 +57,17 @@ function animateProjectsWindowIn() {
         $('#projects').off('scroll touchmove mousewheel');
         setProjectsContainerSize();
         window.onresize = setProjectsContainerSize;
-    }, 1300);
+    }, 200);
     
     
     setTimeout(() => {
-        popmotion.stagger(projectsAnimations, 150)
+        popmotion.stagger(projectsAnimations, 75)
         .start((v) => v.forEach((y, i) => projectsStylers[i].set('y', y)));
-    }, 500);
+    }, 0);
 
     setTimeout(() => {
         $('#projects').animate({'opacity': '1'}, 300);
-    }, 700);
+    }, );
 
     //animates navbar bars
     const projectsNavbarBars = document.getElementsByClassName('projects-bar');
@@ -75,26 +77,26 @@ function animateProjectsWindowIn() {
 
 
     const navbarAnimations = Array(navbarStylers.length)
-        .fill(popmotion.tween({ from: 50, to: 0, duration: 400, ease: popmotion.easing.easeOut}));
+        .fill(
+            popmotion.tween({ from: 50, to: 0, duration: 400, ease: popmotion.easing.easeOut})
+            );
 
-    var navPrepare = setTimeout(() => {
-        var i = 0;
-        $('.projects-bar').eq(i).css('display', 'block');
-        i++;
-        setInterval(() => {
-            $('.projects-bar').eq(i).css('display', 'block');
+    var i = 0;
+    
+    setTimeout( () => {
+        var navPrepare = setInterval(() => {
+            $('.projects-bar').eq(i).animate({'opacity': '.5'}, 50);
             i++;
             if (!$('.projects-bar').get(i)) {
                 clearInterval(navPrepare);
             }
-        }, 300);
-    }, 850)
+        }, 200);
+    }, 0);
 
     setTimeout(() => {
-        $('.projects-bar').css('opacity', '.5');
-        popmotion.stagger(navbarAnimations, 300)
+        popmotion.stagger(navbarAnimations, 200)
         .start((v) => v.forEach((x, i) => navbarStylers[i].set('x', x)));
-    }, 700);
+    }, 0);
 }
 
 function setProjectsHandlers() {
