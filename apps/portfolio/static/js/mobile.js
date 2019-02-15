@@ -181,7 +181,7 @@ function animateMobileContentIn() {
 		.fill(popmotion.spring({ from: 0, to: -50}))
 
 	setTimeout(() => {popmotion.stagger(barAnimations, 150)
-		.start((v) => v.forEach((x, i) => barStylers[i].set('x', x)))}, 200);
+		.start((v) => v.forEach((x, i) => barStylers[i].set('x', x)))}, 50);
 
 	setTimeout(() => {popmotion.tween({
 		from: {
@@ -190,16 +190,16 @@ function animateMobileContentIn() {
 		to: {
 			opacity: 1
 		},
-		duration: 400,
+		duration: 200,
 		ease: popmotion.easing.easeIn
-	}).start(mobileNoteStyler.set)}, 200);
+	}).start(mobileNoteStyler.set)}, 100);
 
 	popmotion.tween({
 		from: 0,
 		to: {
 			y: 50
 		},
-		duration: 600,
+		duration: 400,
 		ease: popmotion.easing.easeInOut
 	}).start(mobileHeaderStyler.set);
 

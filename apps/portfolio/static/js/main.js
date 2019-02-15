@@ -234,7 +234,7 @@ function animateMainContent() {
 	}
 
 	prepareMainWindow();
-	setTimeout(() => $('.main-header').animate({'opacity':'1'},200), 2000);
+	$('.main-header').animate({'opacity':'1'},200);
 }
 
 $(document).ready(function() {
@@ -272,9 +272,9 @@ $(document).ready(function() {
 	if ($('.able').hasClass('home')) {
 		// if the page is loaded from the home page
 		animateMainContent();
-		setTimeout(fadeContentIn, 2000);
-		setTimeout(animateMobileContentIn, 2000);
-		setTimeout(setSlideHandlers, 2500);
+		fadeContentIn();
+		animateMobileContentIn();
+		setTimeout(setSlideHandlers, 200);
 	} else {
 		// if the page is loaded from a location other than the home page
 		var curPage = $('.able').attr('id');
@@ -283,7 +283,7 @@ $(document).ready(function() {
 			fadeContentIn();
 		}, 100);
 		animateMobileContentIn();
-		setTimeout(setSlideHandlers, 730);
+		setTimeout(setSlideHandlers, 200);
 	}
 	setHandlers();
 	setMobileHandlers();

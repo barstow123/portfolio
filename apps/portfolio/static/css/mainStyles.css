@@ -104,20 +104,20 @@
 }
 
 .open-script, .close-script {
-	display: inline;
-	position: fixed;
+	position: absolute;
 	font-size: 1.4em;
 	font-family: 'Inconsolata', monospace;
+	height: 30px;
 }
 
 .open-script {
-	left: 140px;
+	left: 40px;
 	top: 100px;
 }
 
 .close-script {
-	left: 140px;
-	top: 63vw;
+	left: 40px;
+	bottom: 70px;
 }
 
 .typed-cursor {
@@ -130,6 +130,8 @@
 	position: fixed;
 	padding-top: 40px;
 	padding-left: 30px;
+	height: 100%;
+	width: 100%;
 }
 
 #bio {
@@ -238,12 +240,6 @@
 	display: inline-block;
 	margin-bottom: 5px;
 	z-index: 4;
-}
-
-@media (min-width: 1000px) {
-	.close-script {
-		top: 85vh;
-	}
 }
 
 @media (max-height: 510px) {
