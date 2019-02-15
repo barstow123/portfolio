@@ -47,7 +47,7 @@
 				<strong><p class='calendar-alert'>coming soon!</p></strong>
 			</div>
 			<div class='mobile-slide-box' data-window-id='bio'><p>Bio</p></div>
-			<div class='mobile-slide-box' data-window-id='projects'><p>projects</p></div>
+			<div class='mobile-slide-box' data-window-id='projects'><p>Projects</p></div>
 		</div>
 		<img src='{% static "images/treble-clef.png" %}' alt='mobile note' class='mobile-home-note' data-window-id='home-page'>
 		<img src='{% static "images/treble-clef.png" %}' alt='musical note' class='home-note' data-window-id='home-page'>
@@ -72,7 +72,7 @@
 			</div>
 
 			<div class='sidebar-btn' data-window-id='projects'>
-				<p>projects</p>
+				<p>Projects</p>
 			</div>
 
 			<div class='icon-container'>
@@ -88,7 +88,7 @@
 			<div id='home-page' class='home {{portfolio}}'>
 				<h1 class='main-header'>Musician, Educator, Full Stack Developer</h1>
 				<span class='open-script'></span>
-				<img src='{% static "images/theoretical-artwork, transparent.png" %}' alt='great-art' class='artwork'>
+				<img src='{% static "images/theoretical-artwork, transparent.png" %}' alt='great-art' class='artwork' style='display: none;'>
 				<span class='close-script'></span>
 			</div>
 
@@ -96,10 +96,10 @@
 				<div id='bio-left-side'>
 					<img src='{% static "images/portrait.jpg" %}' alt='photo' class='portrait'>
 					<div class='info-container'>
-						<p class='description'>I am a web developer/software engineer, and music lessons business owner. 
-	I have a flexible, and plastic personality with a deep passion for solving problems and writing elegant code.
-	My experience leads me to have a strong skill set with business management, and customer relations. My unique interest
-	in front end design drives my technological career.</p>
+						<p class='description'>Andrew is a web developer/software engineer, and music lessons business owner. 
+	he has a flexible, and plastic personality with a deep passion for solving problems and writing elegant code.
+	his experience leads him to have a strong skill set with business management, and customer relations. Andrew's unique interest
+	in front end design drives his technological career.</p>
 						<p class='languages'><strong>languages: </strong></p>
 						<p><span class='languages-list'>Javascript, Python, Ruby, HTML, CSS, Java</span></p>
 						<p class='back-end-skills'><strong>back end skills:</strong></p>
@@ -151,9 +151,9 @@
 						{% csrf_token %}
 						<label for='onsubmit' class='thank-you-label'>Thank you! :)</label>
 						<div class='show return-email unfille	d'>
-							<label for='return-address' class='email-label'>please enter a return email address...</label>
+							<label for='return-address' class='email-label'>please enter a return email address</label>
 							<label for='message' class='message-label'>now, what did you want to talk about?</label>
-							<label for='name' class='name-label'>please enter your name...</label>
+							<label for='name' class='name-label'>please enter your name</label>
 							<input type='text' id='return-address' name='return-address' value='' class='email-input'>
 						</div>
 						<div class='hide name unfilled'>
@@ -190,7 +190,7 @@
 						<a href='https://github.com/barstow123?tab=repositories'><img src='{% static "assets/github-mobile.svg" %}' alt='github' data-alt-src='{% static "assets/github-hovered.svg" %}' class='github icon'></a>
 					</div>
 				</div>
-				<img src='{% static "images/dumb-arrow.png" %}' alt='dumb-arrow' class='arrow desktop'>
+				<img src='{% static "images/dumb-arrow.png" %}' alt='dumb-arrow' class='arrow desktop' style='display: none;'>
 			</div>
 
 			<div id='projects' class='window {{projects}}'>
@@ -221,7 +221,7 @@
 						</div>
 							<img  class='project-main-image' src='{% static "images/tames_music.jpg" %}'>
 						<div class='bottom-box'>
-							<p>I taught this guy most of what he knows about the guitar...before he was cool</p>
+							<p>I taught this guy most of what he knows about the guitar before he was cool</p>
 						</div>	
 					</div>
 
