@@ -1,10 +1,9 @@
-@import url(//db.onlinewebfonts.com/c/6c02f15fdbc9dd7c482b52b06d8e0a6c?family=Super+Mario+256);
-
 * {
 	margin: 0px;
 	padding: 0px;
 	color: white;
-	font-family: 'K2D', sans-serif;
+	/*font-family: 'K2D', sans-serif;*/
+	font-family: 'Hind', sans-serif;
 	overflow: hidden;
 }
 
@@ -100,13 +99,7 @@
 }
 
 .main-header {
-	font-family: "Super Mario 256";
-    src: url("//db.onlinewebfonts.com/t/6c02f15fdbc9dd7c482b52b06d8e0a6c.eot");
-    src: url("//db.onlinewebfonts.com/t/6c02f15fdbc9dd7c482b52b06d8e0a6c.eot?#iefix") format("embedded-opentype"),
-    url("//db.onlinewebfonts.com/t/6c02f15fdbc9dd7c482b52b06d8e0a6c.woff2") format("woff2"),
-    url("//db.onlinewebfonts.com/t/6c02f15fdbc9dd7c482b52b06d8e0a6c.woff") format("woff"),
-    url("//db.onlinewebfonts.com/t/6c02f15fdbc9dd7c482b52b06d8e0a6c.ttf") format("truetype"),
-    url("//db.onlinewebfonts.com/t/6c02f15fdbc9dd7c482b52b06d8e0a6c.svg#Super Mario 256") format("svg");
+	
 }
 
 #main-content h1:first-child {
@@ -230,6 +223,7 @@
 	font-size: .7em;
 	color: #ca1906;
 	opacity: 0;
+	margin-top: -5px;
 }
 
 .sidebar-btn p {
