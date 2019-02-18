@@ -27,7 +27,7 @@
 
 .languages, .back-end-skills, .front-end-skills {
     padding-top: 15px;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 1.15em;
 }
 
@@ -38,6 +38,7 @@
 .languages-list, .back-end-skills-list, .front-end-skills-list {
     font-weight: lighter;
     font-size: .93em;
+    line-height: 1.1;
 }
 
 .download-resume {
