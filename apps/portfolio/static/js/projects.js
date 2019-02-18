@@ -1,3 +1,11 @@
+function calculateMobileCols(num) {
+    return (document.body.clientWidth*.9+20)*num
+}
+
+function calculateMobileRows(num) {
+    return (document.body.clientWidth*.9+11)*num
+}
+
 function prepareProjectsWindow() {
     const windowStyler = popmotion.styler(document.getElementById('projects'));
     $('#projects').show();
@@ -14,17 +22,41 @@ function prepareProjectsWindow() {
 
 function animateProjectsWindowIn() {
 
+    
     //animates projects into document
     const projectsContainer = document.getElementById('projects-container');
     const projectsStylers = Array
                     .from(projectsContainer.children)
                     .map(popmotion.styler);
 
-    const projectsPreparations = Array(projectsStylers.length)
-        .fill(popmotion.tween({ from: 0, to: 300, duration: 0 }))
+    //calculates offsets for projects starting locations prior to animation
+    let projectsStartingOffsets = Array(projectsStylers.length).fill(0);
+    // if cols == 1
+    if (document.body.clientWidth < 600) {
+        if ($('.selected').is('.projects-nav-link-code')) {
+            projectsStartingOffsets[1] = calculateMobileRows(-1);
+        } else if ($('.selected').is('.projects-nav-link-not-code')) {
+            projectsStartingOffsets[2] = calculateMobileRows(-1);
+        }
+    }
+    console.log('projects starting offsets: '+projectsStartingOffsets);
 
-    const projectsAnimations = Array(projectsStylers.length)
-        .fill(popmotion.spring({ from: 300, to: 10, stiffness: 150, damping: 15, mass: .7}));
+    let projectsPreparations = Array(projectsStylers.length);
+    for (let i=0; i<projectsPreparations.length; i++) {
+        projectsPreparations[i] = popmotion.tween({from: 0, to: projectsStartingOffsets[i]+300, duration: 0});
+    }
+
+    let projectsAnimations = Array(projectsStylers.length);
+        //.fill(popmotion.spring({ from: 300, to: 10, stiffness: 150, damping: 15, mass: .7}));
+    for (let i=0; i<projectsPreparations.length; i++) {
+        projectsAnimations[i] = popmotion.spring({
+            from: projectsStartingOffsets[i]+300,
+            to: projectsStartingOffsets[i]+10,
+            stiffness: 150,
+            damping: 15,
+            mass: .7
+        });
+    }
 
     popmotion.stagger(projectsPreparations, 0)
         .start((v) => v.forEach((y, i) => projectsStylers[i].set('y', y)));
@@ -65,9 +97,7 @@ function animateProjectsWindowIn() {
         .start((v) => v.forEach((y, i) => projectsStylers[i].set('y', y)));
     }, 0);
 
-    setTimeout(() => {
-        $('#projects').animate({'opacity': '1'}, 300);
-    }, );
+    $('#projects').animate({'opacity': '1'}, 300);
 
     //animates navbar bars
     const projectsNavbarBars = document.getElementsByClassName('projects-bar');
@@ -224,14 +254,6 @@ function animateProjects(category) {
     const chessProjectStyler = popmotion.styler(document.querySelector('.playchessgames'));
     const axelProjectStyler = popmotion.styler(document.querySelector('.tames-music'));
     const projectWindowStyler = popmotion.styler(document.getElementById('projects-container'));
-
-    function calculateMobileCols(num) {
-        return (document.body.clientWidth*.9+20)*num
-    }
-
-    function calculateMobileRows(num) {
-        return (document.body.clientWidth*.9+11)*num
-    }
 
     function delayProjectsScrolling(delay = 300) {
         $('#projects').on('scroll touchmove mousewheel', function(e){
