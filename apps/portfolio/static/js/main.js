@@ -52,8 +52,15 @@ function animateWindow(windowName, firstLoad=false) {
 	const windowStyler = popmotion.styler(document.getElementById(windowName));
 
 	function setActiveWindow() {
+		//disables pointer events for prevPage
+		$('.able').css('pointer-events', 'none');
+
+		//sets active window
 		$('.able').addClass('disabled').removeClass('able');
 		$('#'+windowName).addClass('able').removeClass('disabled');
+
+		//enables pointer events for currentPage
+		$('.able').css('pointer-events', 'auto');
 	}
 
 	function prepareWindow(delay = 5) {
@@ -114,6 +121,7 @@ function animateWindow(windowName, firstLoad=false) {
 			}, delay);
 		}
 		if (windowName == 'projects') {
+			console.log('animating window: '+windowName);
 			animateProjectsWindowIn();
 		}
 		if ($('#'+windowName).hasClass('slideable')) {

@@ -1,5 +1,5 @@
 function prepareProjectsWindow() {
-    const windowStyler = popmotion.styler(document.getElementById('bio'));
+    const windowStyler = popmotion.styler(document.getElementById('projects'));
     $('#projects').show();
     windowStyler.set({opacity: 0});
     $('.projects-bar').css('opacity', '0');
@@ -175,7 +175,6 @@ function setProjectsHandlers() {
         $(this).find('.top-box').stop().animate({'top': '50px', 'opacity': '1'}, 350);
         if (document.body.clientWidth < 600) {
             // if cols == 1
-            console.log('got here');
             $(this).find('.bottom-box').stop().animate({'bottom': '70px', 'opacity': '1'}, 350);
             setTimeout(function() {
                 $('.project a').css('pointer-events', 'auto');

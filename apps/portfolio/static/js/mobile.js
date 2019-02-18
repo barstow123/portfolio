@@ -4,16 +4,20 @@ function setMobileHandlers() {
 
 	$('.mobile-slide-box').click(function() {
 		let name = $(this).attr('data-window-id');
-		animateWindow(name)
 		if (name != 'calendar') {
 			window.history.pushState({}, '', `/${name}`);
 		}
+		animateWindow(name)
 	})
 
 	$('.mobile-home-note').click(function() {
 		let name = $(this).attr('data-window-id');
-		animateWindow(name);
 		window.history.pushState({}, '', '/');
+		const activeWindowHeight = $('.able').height();
+		animateWindow(name);
+		const homePageStyler = popmotion.styler(document.getElementById('home-page'));
+		homePageStyler.set({height: activeWindowHeight});
+		$('#home-page').height(activeWindowHeight);
 	})
 
 	$('.bars').click(function() {
@@ -30,12 +34,21 @@ function setMobileHandlers() {
 				.from(mobileSlides.children)
 				.map(popmotion.styler)
 
+			//this code block fixes the wierdest bug...and you don't want to delete this code and deal with it again
+			if ($('.able').is('#projects')) {
+				const activeWindowStyler = popmotion.styler(document.querySelector('#projects'));
+				activeWindowStyler.set({opacity: 1});
+			}
+
 			if ($('#mobile-sidebar').hasClass('unslid')) {
 
 				$('#mobile-sidebar').css('pointer-events', 'auto');
 
 				$('.mobile-slide-box').click(function() {
 					let name = $(this).attr('data-window-id');
+					if (name != 'calendar') {
+						window.history.pushState({}, '', `/${name}`);
+					}
 					animateWindow(name)
 				});
 				$('.bars').off('click');
