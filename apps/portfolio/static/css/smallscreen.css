@@ -94,6 +94,7 @@
 
 .next-btn {
 	display: none;
+	cursor: pointer;
 }
 
 .mobile-next-btn {

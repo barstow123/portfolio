@@ -200,6 +200,7 @@
 	display: inline-block;
 	position: absolute;
 	z-index: 4;
+	cursor: pointer;
 }
 
 .mobile-home-note {
@@ -213,6 +214,7 @@
 	height: 35px;
 	display: inline-block;
 	opacity: 0.0;
+	cursor: pointer;
 }
 
 .sidebar-btn:first-child {

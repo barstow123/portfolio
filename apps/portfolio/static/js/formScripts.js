@@ -662,7 +662,7 @@ function displayInteractiveText(version = 'Desktop') {
 		$('.interactive-words').animate({'opacity': '1.0'});
 		setTimeout(() => {
 			$('.interactive-words').animate({'opacity': '0'});
-		}, 1800);
+		}, 3000);
 		showedText = true;
 	}
 }

@@ -39,6 +39,7 @@
 
 .projects-btn {
     font-size: .9em;
+    cursor: pointer;
 }
 
 .project-main-image {
@@ -60,6 +61,7 @@
     display: inline-block;
     font-family: 'Roboto Mono', monospace;
     font-size: 1.3em;
+    cursor: pointer;
 }
 
 .projects-nav-link-not-code {

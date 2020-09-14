@@ -83,7 +83,8 @@
 }
 
 .user-active, .email-active {
-	opacity: 0;
+    opacity: 0;
+    cursor: pointer;
 }
 
 .user, .email {
@@ -120,6 +121,7 @@
 .next-btn {
 	color: black;
     font-family: 'K2D', sans-serif;
+    cursor: pointer;
 }
 
 .mobile-next-btn {
@@ -148,7 +150,7 @@
 
 .desktop-social {
     position: absolute;
-    bottom: 150px;
+    bottom: 85px;
 }
 
 .arrow {
@@ -176,5 +178,5 @@
 .or-email-me {
     font-size: 1.5em;
     font-family: 'K2D', sans-serif;
-    margin-top: 30px;
+    margin-top: 230px;
 }

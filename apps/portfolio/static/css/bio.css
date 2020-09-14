@@ -25,6 +25,10 @@
     font-size: 1.05em;
 }
 
+.description {
+    display: none;
+}
+
 .languages, .back-end-skills, .front-end-skills {
     padding-top: 15px;
     font-weight: 500;
